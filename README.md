@@ -36,6 +36,9 @@
 
 It supports SSL-over-Tor, automatic circuit rotation on failure, exponential backoff retry logic, rate limiting, HTTP code filtering, redirect following, and file extension appending — giving you a complete directory-busting solution for `.onion` targets.
 
+![Uploading torbuster_screen.png…]()
+
+
 ---
 
 ## Features
