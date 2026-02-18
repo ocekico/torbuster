@@ -5,7 +5,6 @@
 **A CLI tool to enumerate endpoints on Tor hidden services**
 
 ![C++](https://img.shields.io/badge/C%2B%2B-17-blue?style=flat-square&logo=c%2B%2B)
-![License](https://img.shields.io/badge/license-MIT-magenta?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey?style=flat-square&logo=linux)
 ![Tor](https://img.shields.io/badge/requires-Tor-purple?style=flat-square)
 
