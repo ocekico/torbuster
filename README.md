@@ -27,7 +27,6 @@
 - [Examples](#examples)
 - [Architecture](#architecture)
 - [Disclaimer](#disclaimer)
-- [License](#license)
 
 ---
 
@@ -261,6 +260,4 @@ TorBuster is intended **strictly for authorized security testing, research, and 
 
 ---
 
-## License
-
-This project is licensed under the **MIT License** — see the [`LICENSE`](./LICENSE) file for details.
+Thanks to <a href=https://github.com/sehe>sehe</a> and <a href=https://github.com/bvcxza>bvcxza</a> for creating the SOCKS4/SOCKS5 library used in this project: <a href=https://github.com/sehe/asio-socks45-client>asio-socks45-client</a>
