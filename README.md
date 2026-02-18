@@ -1,14 +1,6 @@
 <div align="center">
 
-```
-██████████   ██████   ████████   ████████████████
-    ██      ██  ██   ██    ██   ██    ██    ██  ██
-    ██      ██  ██   ██    ██   ██    ██    ██  ██
-    ██      ██  ██   ████████   ████████    ██████
-    ██      ██  ██   ██    ██   ██    ██    ██  ██
-    ██      ██  ██   ██    ██   ██    ██    ██  ██
-    ██       ████    ████████   ████████   ██  ████
-```
+<img width="909" height="142" alt="ascii-art-text(1)" src="https://github.com/user-attachments/assets/1d43a833-afc9-4451-8bc3-43575699e916" />
 
 **A CLI tool to enumerate endpoints on Tor hidden services**
 
@@ -100,7 +92,8 @@ cd TorBuster
 make
 ```
 
-The compiled binary will be placed in the project root as `torbuster`.
+The compiled binary will be placed in the project build directory as `torbuster`.
+The binary will then be copied to `$(HOME)/.local/bin`.
 
 ---
 
@@ -186,11 +179,16 @@ torbuster -u <onion_url> -w <wordlist> [options]
 
 ---
 
+## Important
+An environment variable 'COOKIE_AUTH' will be created when the option `-a, --auth-cookie` is used for the first time,
+this environment variable is necessary in order to perform circuit rotation. You can also create the environment variable
+using ```bash export COOKIE_AUTH=<cookie value or password>``` then execute **torbuster**.
+
 ## Examples
 
 **Basic scan:**
 ```bash
-./torbuster -u example3g2uuwf6p.onion -w wordlist.txt
+./torbuster -u example3g2uuwf6p.onion -w wordlist.txt 
 ```
 
 **HTTPS target, 4 threads, hide 404s:**
@@ -212,7 +210,7 @@ torbuster -u <onion_url> -w <wordlist> [options]
 ```bash
 ./torbuster -u example3g2uuwf6p.onion -w wordlist.txt \
   -t 8 -R 5 -r 10 \
-  -a $(cat /run/tor/control.authcookie | xxd -p | tr -d '\n')
+  -a <cookie_value or password>
 ```
 
 ---
@@ -251,8 +249,7 @@ TorBuster is composed of four modules:
 | `main2.cc` | Entry point — parses CLI arguments and launches scan threads |
 | `endpoint_scanner.cc` | Manages the wordlist, splits work across threads, formats and filters output |
 | `tor_client.cc` | Manages the SOCKS5 tunnel, SSL streams, retry/backoff, and HTTP I/O |
-| `tor_controller.cc` | Interfaces with the Tor Control Port to rotate circuits on demand |
-| `banner.cc` | Renders the pixel-art terminal banner |
+| `tor_controller.hpp` | (Header-Only) Interfaces with the Tor Control Port to rotate circuits on demand |
 
 ---
 
