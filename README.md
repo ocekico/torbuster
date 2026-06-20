@@ -125,8 +125,16 @@ sudo systemctl restart tor
 
 **3. Retrieve the authentication cookie:**
 
+With Debian/Kali Linux:
+
 ```bash
 cat /run/tor/control.authcookie | xxd -p | tr -d '\n'
+```
+
+With Arch Linux:
+
+```bash
+sudo cat /var/lib/tor/control_auth_cookie | xxd -p | tr -d '\n'
 ```
 
 Pass this value to TorBuster with the `-a` flag.
