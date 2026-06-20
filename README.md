@@ -61,7 +61,7 @@ It supports SSL-over-Tor, automatic circuit rotation on failure, exponential bac
 
 ### System
 
-- Linux (tested on Kali Linux / Debian-based distros)
+- Linux (tested on Kali Linux / Debian-based distros & Arch Linux)
 - Tor daemon running on port `9050`
 - Tor Control Port enabled on port `9051`
 - A terminal with UTF-8 and 24-bit ANSI color support
@@ -80,6 +80,12 @@ Install on Debian/Ubuntu/Kali:
 
 ```bash
 sudo apt install libboost-all-dev libssl-dev build-essential
+```
+
+Install on ArchLinux/BlackArch:
+
+```bash
+sudo pacman -S boost base-devel
 ```
 
 ---
